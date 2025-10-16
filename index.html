@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padrón Electoral - Delegados</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f6fa;
+    text-align: center;
+    margin-top: 60px;
+    color: #333;
+  }
+
+  h2 {
+    color: #004b87;
+    margin-bottom: 10px;
+  }
+
+  input, button {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    background-color: #004b87;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0066c2;
+  }
+
+  #resultado {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: white;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+
+  .dato {
+    margin: 5px 0;
+  }
+</style>
+</head>
+<body>
+
+<h2>Consulta tu lugar de votación</h2>
+<p>Ingresá tu DNI para conocer tus datos:</p>
+
+<input type="text" id="dni" placeholder="Ej: 12345678">
+<br>
+<button onclick="buscar()">Consultar</button>
+
+<div id="resultado"></div>
+
+<script>
+// 📋 Padrón: lista de personas (DNI, Nombre, Lugar)
+const padron = [
+  { dni: "43913319", nombre: "Sol Dánae Lezcano", lugar: "Palpa 786" },
+  { dni: "87654321", nombre: "Ana López", lugar: "Oficina 1" },
+  { dni: "45678912", nombre: "Carlos Díaz", lugar: "Oficina 2" },
+  // 🔹 Agregá aquí todos tus compañeros...
+];
+
+function buscar() {
+  const dniIngresado = document.getElementById("dni").value.trim();
+  const resultado = document.getElementById("resultado");
+
+  if (dniIngresado === "") {
+    resultado.innerHTML = "Por favor, ingresá un DNI.";
+    return;
+  }
+
+  const persona = padron.find(p => p.dni === dniIngresado);
+
+  if (persona) {
+    resultado.innerHTML = `
+      <div class="dato">🧍 <strong>Nombre:</strong> ${persona.nombre}</div>
+      <div class="dato">🪪 <strong>DNI:</strong> ${persona.dni}</div>
+      <div class="dato">🗳️ <strong>Lugar de votación:</strong> ${persona.lugar}</div>
+    `;
+  } else {
+    resultado.innerHTML = "⚠️ DNI no encontrado en el padrón.";
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
